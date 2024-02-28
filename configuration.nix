@@ -68,7 +68,6 @@
       rofi
       wl-clipboard
       cliphist
-      gh
       xmlformat
       nodePackages.sql-formatter
       nodePackages.prettier
@@ -108,6 +107,7 @@
     shfmt
     du-dust
     p7zip
+    gh
   ];
 
   fonts.packages = with pkgs; [

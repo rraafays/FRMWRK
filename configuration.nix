@@ -128,4 +128,8 @@
       chown -R raf /home/raf/.config
     '';
   };
+
+  system.autoUpgrade = {
+    enable = true;
+  };
 }

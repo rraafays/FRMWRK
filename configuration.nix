@@ -4,13 +4,20 @@
   imports = [ ./hardware-configuration.nix ];
 
   services.openssh.enable = true;
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    systemd-boot = {
-      enable = true;
-      consoleMode = "max";
-      configurationLimit = 20;
+  boot = {
+    kernelParams = [ "joydev" "usbhid" "quiet" ];
+    loader = {
+      efi.canTouchEfiVariables = true;
+      systemd-boot = {
+        enable = true;
+        consoleMode = "max";
+        configurationLimit = 20;
+      };
     };
+  };
+
+  system.autoUpgrade = {
+    enable = true;
   };
 
   networking.hostName = "SHAGOHOD";
@@ -66,7 +73,7 @@
   users.users.raf = {
     isNormalUser = true;
     description = "raf";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "input" ];
     packages = with pkgs; [
       librewolf
       kitty
@@ -84,6 +91,7 @@
       thokr
       speedtest-rs
       qrencode
+      transmission
     ];
   };
 
@@ -116,6 +124,11 @@
     gh
   ];
 
+  hardware.uinput.enable = true;
+  services.udev.packages = with pkgs; [
+    game-devices-udev-rules
+  ];
+
   fonts.packages = with pkgs; [
     sarasa-gothic
     (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
@@ -127,9 +140,5 @@
       ln -s /home/raf/.config/ /root/.config
       chown -R raf /home/raf/.config
     '';
-  };
-
-  system.autoUpgrade = {
-    enable = true;
   };
 }

@@ -55,9 +55,9 @@
   programs.fish.enable = true;
   programs.starship.enable = true;
   programs.steam.enable = true;
+  users.defaultUserShell = pkgs.fish;
   services.getty.autologinUser = "raf";
   users.users.raf = {
-    shell = pkgs.fish;
     isNormalUser = true;
     description = "raf";
     extraGroups = [ "networkmanager" "wheel" ];

@@ -92,6 +92,7 @@
       speedtest-rs
       qrencode
       transmission
+      mpv
     ];
   };
 

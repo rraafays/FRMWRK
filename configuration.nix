@@ -97,6 +97,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    uutils-coreutils-noprefix
     unstable.cargo
     btop
     gcc

@@ -75,54 +75,55 @@
     description = "raf";
     extraGroups = [ "networkmanager" "wheel" "input" ];
     packages = with pkgs; [
-      librewolf
-      kitty
-      fastfetch
-      rofi
-      wl-clipboard
-      cliphist
-      xmlformat
       nodePackages.sql-formatter
-      nodePackages.prettier
       jetbrains.idea-community
-      fzf
-      mprocs
-      onefetch
-      thokr
+      nodePackages.prettier
+      wl-clipboard
       speedtest-rs
-      qrencode
+      dotnet-sdk_8
       transmission
+      librewolf
+      xmlformat
+      onefetch
+      qrencode
+      cliphist
+      python3
+      nodejs
+      mprocs
+      stylua
+      kitty
+      thokr
+      rofi
+      fzf
       mpv
+      jq
     ];
   };
 
   environment.systemPackages = with pkgs; [
     uutils-coreutils-noprefix
     unstable.cargo
+    nixpkgs-fmt
+    fastfetch
+    starship
+    du-dust
+    ripgrep
+    zoxide
+    direnv
+    neovim
+    shfmt
+    unzip
+    p7zip
     btop
     gcc
     git
     bat
     lsd
-    starship
-    zoxide
-    direnv
-    neovim
     xxd
-    nodejs
-    jq
-    unzip
-    ripgrep
-    dotnet-sdk_8
-    python3
     duf
     wget
     tmux
     nil
-    nixpkgs-fmt
-    shfmt
-    du-dust
-    p7zip
     gh
   ];
 

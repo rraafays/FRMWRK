@@ -115,14 +115,13 @@
     unzip
     p7zip
     btop
-    gcc
+    wget
+    tmux
     git
     bat
     lsd
     xxd
     duf
-    wget
-    tmux
     nil
     gh
   ];

@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [ ./hardware-configuration.nix ./home.nix ];
 
   services.openssh.enable = true;
   boot = {
@@ -82,7 +82,6 @@
       speedtest-rs
       dotnet-sdk_8
       transmission
-      librewolf
       xmlformat
       onefetch
       qrencode

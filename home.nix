@@ -51,7 +51,7 @@ in
             "extensions.webcompat.perform_injections" = true;
             "extensions.webcompat.perform_ua_overrides" = true;
             "privacy.donottrackheader.enabled" = true;
-            "signon.rememberSignons" = true;
+            "signon.rememberSignons" = false;
             "browser.formfill.enable" = false;
             "signon.autofillForms" = false;
             "extensions.formautofill.addresses.enabled" = false;

@@ -1,6 +1,7 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+  nur-archive = "https://github.com/nix-community/NUR/archive/master.tar.gz";
 in
 {
   imports = [
@@ -9,12 +10,7 @@ in
 
   nixpkgs.config = {
     packageOverrides = pkgs: {
-      nur = import
-        (
-          builtins.fetchTarball
-            "https://github.com/nix-community/NUR/archive/master.tar.gz"
-        )
-        { inherit pkgs; };
+      nur = import (fetchTarball nur-archive) { inherit pkgs; };
     };
   };
 

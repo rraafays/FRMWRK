@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  nixos-unstable = "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
+in
 {
   imports = [ ./hardware-configuration.nix ./home.nix ];
 
@@ -18,6 +21,11 @@
 
   system.autoUpgrade = {
     enable = true;
+  };
+
+  nix = {
+    optimise.automatic = true;
+    gc.automatic = true;
   };
 
   networking.hostName = "SHAGOHOD";
@@ -54,12 +62,7 @@
   nixpkgs.config = {
     allowUnfree = true;
     packageOverrides = pkgs: {
-      unstable = import
-        (
-          fetchTarball
-            "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz"
-        )
-        { };
+      unstable = import (fetchTarball nixos-unstable) { };
     };
   };
 

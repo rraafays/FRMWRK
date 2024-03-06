@@ -66,8 +66,11 @@ in
     };
   };
 
-  security.sudo.enable = false;
-  security.doas.enable = true;
+  security.sudo = {
+    enable = true;
+    execWheelOnly = true;
+    wheelNeedsPassword = true;
+  };
   programs.fish.enable = true;
   programs.starship.enable = true;
   programs.steam.enable = true;

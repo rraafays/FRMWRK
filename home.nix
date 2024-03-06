@@ -25,7 +25,7 @@ in
             ublock-origin
             vimium
             sponsorblock
-            df-youtube
+            youtube-recommended-videos
           ];
           userChrome = ''
             #TabsToolbar { visibility: collapse !important; }

@@ -129,6 +129,7 @@ in
     duf
     nil
     gh
+    fd
   ];
 
   hardware.uinput.enable = true;
@@ -137,8 +138,9 @@ in
   ];
 
   fonts.packages = with pkgs; [
-    sarasa-gothic
     (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+    (iosevka-bin.override { variant = "sgr-iosevka-term-curly"; })
+    sarasa-gothic
   ];
 
   system.activationScripts.dotfiles = {

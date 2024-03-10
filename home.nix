@@ -165,6 +165,19 @@ in
           disable_splash_rendering = true;
           background_color = "0x000000";
         };
+
+        env = [
+          "XCURSOR_SIZE,24"
+          "GDK_SCALE,1"
+          "WLR_NO_HARDWARE_CURSORS,1"
+          "GDK_BACKEND,wayland,x11"
+          "QT_QPA_PLATFORM,wayland;xcb"
+          "SDL_VIDEODRIVER,wayland"
+          "CLUTTER_BACKEND,wayland"
+          "XDG_CURRENT_DESKTOP,Hyprland"
+          "XDG_SESSION_TYPE,wayland"
+          "XDG_SESSION_DESKTOP,Hyprland"
+        ];
       };
     };
     programs.firefox = {

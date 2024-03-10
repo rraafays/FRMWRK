@@ -24,6 +24,11 @@ in
   };
 
   home-manager.users.raf = {
+    programs.git = {
+      enable = true;
+      userName = "raf";
+      userEmail = "rraf@tuta.io";
+    };
     home.stateVersion = "18.09";
     home.enableNixpkgsReleaseCheck = false;
     home.packages = with pkgs; [

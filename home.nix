@@ -68,10 +68,41 @@ in
           "CTRL, code:47, fullscreen"
           "CTRL, code:48, togglefloating"
           "CTRL, code:61, exec, firefox"
+
           "CTRL, h, movefocus, l"
           "CTRL, j, movefocus, d"
           "CTRL, k, movefocus, u"
           "CTRL, l, movefocus, r"
+          "CTRL SHIFT, h, swapwindow, l"
+          "CTRL SHIFT, j, swapwindow, d"
+          "CTRL SHIFT, k, swapwindow, u"
+          "CTRL SHIFT, l, swapwindow, r"
+
+          "CTRL, 1, workspace, 1 "
+          "CTRL, 2, workspace, 2 "
+          "CTRL, 3, workspace, 3 "
+          "CTRL, 4, workspace, 4 "
+          "CTRL, 5, workspace, 5 "
+          "CTRL, 6, workspace, 6 "
+          "CTRL, 7, workspace, 7 "
+          "CTRL, 8, workspace, 8 "
+          "CTRL, 9, workspace, 9 "
+          "CTRL, 0, workspace, 10"
+
+          "CTRL SHIFT, 1, movetoworkspace, 1"
+          "CTRL SHIFT, 2, movetoworkspace, 2"
+          "CTRL SHIFT, 3, movetoworkspace, 3"
+          "CTRL SHIFT, 4, movetoworkspace, 4"
+          "CTRL SHIFT, 5, movetoworkspace, 5"
+          "CTRL SHIFT, 6, movetoworkspace, 6"
+          "CTRL SHIFT, 7, movetoworkspace, 7"
+          "CTRL SHIFT, 8, movetoworkspace, 8"
+          "CTRL SHIFT, 9, movetoworkspace, 9"
+          "CTRL SHIFT, 0, movetoworkspace, 10"
+        ];
+        bindm = [
+          "SHIFT, mouse:272, movewindow"
+          "SHIFT, mouse:273, resizewindow"
         ];
 
         exec = [

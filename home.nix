@@ -13,6 +13,16 @@ in
     };
   };
 
+  security.polkit.enable = true;
+  xdg.portal = {
+    config.common.default = "*";
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
+
   home-manager.users.raf = {
     home.stateVersion = "18.09";
     home.enableNixpkgsReleaseCheck = false;
@@ -43,6 +53,84 @@ in
       rofi
       wl-clipboard
     ];
+    dconf.enable = true;
+    wayland.windowManager.hyprland = {
+      enable = true;
+      package = pkgs.hyprland;
+      xwayland.enable = true;
+      systemd.enable = true;
+      settings = {
+        bind = [
+          "CTRL, return, exec, kitty"
+          "CTRL, space, exec, rofi -show drun -display-drun \"\""
+          "CTRL, q, killactive"
+          "CTRL, code:35, togglesplit"
+          "CTRL, code:47, fullscreen"
+          "CTRL, code:48, togglefloating"
+          "CTRL, code:61, exec, firefox"
+          "CTRL, h, movefocus, l"
+          "CTRL, j, movefocus, d"
+          "CTRL, k, movefocus, u"
+          "CTRL, l, movefocus, r"
+        ];
+
+        exec = [
+          "pactl set-sink-volume @DEFAULT_SINK@ 100%"
+          "wpctl set-volume @DEFAULT_SINK@ 100%"
+        ];
+
+        input = {
+          kb_layout = "us";
+          repeat_rate = 150;
+          repeat_delay = 200;
+          follow_mouse = 1;
+          sensitivity = 0;
+        };
+
+        general = {
+          gaps_in = 10;
+          gaps_out = 20;
+          border_size = 2;
+          "col.active_border" = "0xFFEBDBB2";
+          "col.inactive_border" = "0xFF928373";
+          layout = "dwindle";
+          allow_tearing = false;
+          cursor_inactive_timeout = 1;
+          no_cursor_warps = 0;
+        };
+
+        decoration = {
+          rounding = 10;
+          blur = {
+            enabled = false;
+          };
+          drop_shadow = false;
+        };
+
+        animations = {
+          enabled = true;
+          bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+          animation = [
+            "windows, 1, 7, myBezier"
+            "windowsOut, 1, 7, default, popin 80%"
+            "fade, 1, 7, default"
+            "workspaces, 1, 6, default"
+          ];
+        };
+
+        dwindle = {
+          pseudotile = true;
+          preserve_split = true;
+        };
+
+        misc = {
+          force_default_wallpaper = 0;
+          disable_hyprland_logo = true;
+          disable_splash_rendering = true;
+          background_color = "0x000000";
+        };
+      };
+    };
     programs.firefox = {
       enable = true;
       profiles = {

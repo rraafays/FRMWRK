@@ -32,6 +32,7 @@ in
   system.stateVersion = "23.11";
   time.timeZone = "Europe/London";
   networking.networkmanager.enable = true;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   i18n.defaultLocale = "en_GB.UTF-8";
   i18n.extraLocaleSettings = {

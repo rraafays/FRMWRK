@@ -131,6 +131,7 @@ in
   environment.systemPackages = with pkgs; [
     # shell tools
     btop
+    detox
     du-dust
     duf
     fastfetch
@@ -138,6 +139,7 @@ in
     git
     neovim
     p7zip
+    rename
     unzip
     wget
     xxd

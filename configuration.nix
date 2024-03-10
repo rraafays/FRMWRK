@@ -85,6 +85,8 @@ in
       nodePackages.sql-formatter
       jetbrains.idea-community
       nodePackages.prettier
+      adbfs-rootless
+      android-tools
       wl-clipboard
       speedtest-rs
       dotnet-sdk_8

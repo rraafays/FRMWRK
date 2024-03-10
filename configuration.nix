@@ -1,8 +1,5 @@
 { pkgs, ... }:
 
-let
-  nixos-unstable = "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
-in
 {
   imports = [ ./hardware-configuration.nix ./home.nix ];
 
@@ -74,13 +71,6 @@ in
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-  };
-
-  nixpkgs.config = {
-    allowUnfree = true;
-    packageOverrides = pkgs: {
-      unstable = import (fetchTarball nixos-unstable) { };
-    };
   };
 
   hardware.uinput.enable = true;

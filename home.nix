@@ -1,22 +1,48 @@
 { pkgs, ... }:
 let
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
-  nur-archive = "https://github.com/nix-community/NUR/archive/master.tar.gz";
 in
 {
-  imports = [
-    (import "${home-manager}/nixos")
-  ];
+  imports = [ (import "${home-manager}/nixos") ];
 
   nixpkgs.config = {
+    allowUnfree = true;
     packageOverrides = pkgs: {
-      nur = import (fetchTarball nur-archive) { inherit pkgs; };
+      nur = import (fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") { inherit pkgs; };
+      unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") { };
     };
   };
 
   home-manager.users.raf = {
     home.stateVersion = "18.09";
     home.enableNixpkgsReleaseCheck = false;
+    home.packages = with pkgs; [
+      # development tools
+      adbfs-rootless
+      android-tools
+      dotnet-sdk_8
+      jetbrains.idea-community
+      kitty
+      nodejs
+      python3
+      unstable.cargo
+
+      # terminal tools
+      fzf
+      jq
+      mprocs
+      mpv
+      onefetch
+      qrencode
+      speedtest-rs
+      thokr
+      transmission
+
+      # interface tools 
+      cliphist
+      rofi
+      wl-clipboard
+    ];
     programs.firefox = {
       enable = true;
       profiles = {

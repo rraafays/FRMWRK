@@ -153,6 +153,7 @@ in
     nixpkgs-fmt
     nodePackages.prettier
     nodePackages.sql-formatter
+    rustfmt
     shfmt
     stylua
     xmlformat

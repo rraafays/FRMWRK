@@ -28,6 +28,10 @@ in
       enable = true;
       userName = "raf";
       userEmail = "rraf@tuta.io";
+      extraConfig = {
+        init.defaultBranch = "main";
+        push.autoSetupRemote = true;
+      };
     };
     home.stateVersion = "18.09";
     home.enableNixpkgsReleaseCheck = false;

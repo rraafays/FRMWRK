@@ -6,6 +6,7 @@ in
 {
   imports = [ ./hardware-configuration.nix ./home.nix ];
 
+  # ssh & boot
   services.openssh.enable = true;
   boot = {
     kernelParams = [ "joydev" "usbhid" "quiet" ];
@@ -19,20 +20,28 @@ in
     };
   };
 
-  system.autoUpgrade = {
-    enable = true;
-  };
-
+  # nix system
+  system.autoUpgrade. enable = true;
   nix = {
     optimise.automatic = true;
     gc.automatic = true;
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
   };
 
+  security.sudo = {
+    enable = true;
+    execWheelOnly = true;
+    wheelNeedsPassword = true;
+  };
+
+  # timezone, networking, locale
   networking.hostName = "SHAGOHOD";
   system.stateVersion = "23.11";
   time.timeZone = "Europe/London";
   networking.networkmanager.enable = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   i18n.defaultLocale = "en_GB.UTF-8";
   i18n.extraLocaleSettings = {
@@ -45,6 +54,7 @@ in
     LC_TELEPHONE = "en_GB.UTF-8";
   };
 
+  # interface & audio
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -67,11 +77,12 @@ in
     };
   };
 
-  security.sudo = {
-    enable = true;
-    execWheelOnly = true;
-    wheelNeedsPassword = true;
-  };
+  hardware.uinput.enable = true;
+  services.udev.packages = with pkgs; [
+    game-devices-udev-rules
+  ];
+
+  # user packages
   programs.fish.enable = true;
   programs.starship.enable = true;
   programs.steam.enable = true;
@@ -82,70 +93,95 @@ in
     description = "raf";
     extraGroups = [ "networkmanager" "wheel" "input" ];
     packages = with pkgs; [
-      nodePackages.sql-formatter
-      jetbrains.idea-community
-      nodePackages.prettier
+      # development tools
       adbfs-rootless
       android-tools
-      wl-clipboard
-      speedtest-rs
       dotnet-sdk_8
-      transmission
-      xmlformat
+      jetbrains.idea-community
+      kitty
+      nodejs
+      python3
+      unstable.cargo
+
+      # terminal tools
+      fzf
+      jq
+      mprocs
+      mpv
       onefetch
       qrencode
-      cliphist
-      python3
-      nodejs
-      mprocs
-      stylua
-      kitty
+      speedtest-rs
       thokr
+      transmission
+
+      # interface tools 
+      cliphist
       rofi
-      fzf
-      mpv
-      jq
+      wl-clipboard
     ];
   };
 
+  # system packages
   environment.systemPackages = with pkgs; [
-    uutils-coreutils-noprefix
-    unstable.cargo
-    nixpkgs-fmt
-    fastfetch
-    starship
-    du-dust
-    ripgrep
-    zoxide
-    direnv
-    neovim
-    shfmt
-    unzip
-    p7zip
+    # shell tools
     btop
-    wget
-    tmux
-    git
-    bat
-    lsd
-    xxd
+    du-dust
     duf
-    nil
+    fastfetch
     gh
+    git
+    neovim
+    p7zip
+    unzip
+    wget
+    xxd
+
+    # replacement tools
+    bat
     fd
+    lsd
+    ripgrep
+    uutils-coreutils-noprefix
+
+    # prompt enhancements
+    direnv
+    starship
+    tmux
+    zoxide
+
+    # formatters
+    nixpkgs-fmt
+    nodePackages.prettier
+    nodePackages.sql-formatter
+    shfmt
+    stylua
+    xmlformat
+
+    # language servers
+    clang
+    csharp-ls
+    elmPackages.elm-language-server
+    jdt-language-server
+    lemminx
+    lua-language-server
+    nil
+    nodePackages.bash-language-server
+    nodePackages.typescript-language-server
+    python311Packages.python-lsp-server
+    rust-analyzer
+    sqls
+    taplo
+    vscode-langservers-extracted
   ];
 
-  hardware.uinput.enable = true;
-  services.udev.packages = with pkgs; [
-    game-devices-udev-rules
-  ];
-
+  # interface fonts
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
-    (iosevka-bin.override { variant = "sgr-iosevka-term-curly"; })
-    sarasa-gothic
+    (iosevka-bin.override { variant = "sgr-iosevka-term-curly"; }) # system font
+    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; }) # dev symbols
+    sarasa-gothic # chinese, japanese, korean font based on iosevka 
   ];
 
+  # link user & root dotfiles
   system.activationScripts.dotfiles = {
     text = ''
       rm /root/.config

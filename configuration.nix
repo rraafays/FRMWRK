@@ -182,6 +182,7 @@
     (iosevka-bin.override { variant = "sgr-iosevka-term-curly"; }) # system font
     (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; }) # dev symbols
     sarasa-gothic # chinese, japanese, korean font based on iosevka 
+    noto-fonts-monochrome-emoji # emojis that look good in terminal
   ];
 
   # link user & root dotfiles

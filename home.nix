@@ -52,6 +52,7 @@ in
       mprocs
       mpv
       onefetch
+      openvpn
       qrencode
       speedtest-rs
       thokr

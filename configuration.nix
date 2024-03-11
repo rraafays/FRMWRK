@@ -73,6 +73,15 @@
     game-devices-udev-rules
   ];
 
+  # virtualisation
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+
   # user packages
   programs.fish.enable = true;
   programs.starship.enable = true;
@@ -82,7 +91,7 @@
   users.users.raf = {
     isNormalUser = true;
     description = "raf";
-    extraGroups = [ "networkmanager" "wheel" "input" ];
+    extraGroups = [ "networkmanager" "wheel" "input" "docker" ];
     packages = with pkgs; [
       # development tools
       adbfs-rootless

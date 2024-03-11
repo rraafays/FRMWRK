@@ -45,6 +45,7 @@ in
       nodejs
       python3
       unstable.cargo
+      vscode
 
       # terminal tools
       fzf

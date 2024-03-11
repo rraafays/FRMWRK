@@ -92,33 +92,6 @@
     isNormalUser = true;
     description = "raf";
     extraGroups = [ "networkmanager" "wheel" "input" "docker" ];
-    packages = with pkgs; [
-      # development tools
-      adbfs-rootless
-      android-tools
-      dotnet-sdk_8
-      jetbrains.idea-community
-      kitty
-      nodejs
-      python3
-      unstable.cargo
-
-      # terminal tools
-      fzf
-      jq
-      mprocs
-      mpv
-      onefetch
-      qrencode
-      speedtest-rs
-      thokr
-      transmission
-
-      # interface tools 
-      cliphist
-      rofi
-      wl-clipboard
-    ];
   };
 
   # system packages
@@ -166,6 +139,7 @@
     elmPackages.elm-language-server
     jdt-language-server
     lemminx
+    ltex-ls
     lua-language-server
     nil
     nodePackages.bash-language-server

@@ -40,7 +40,7 @@ in
       adbfs-rootless
       android-tools
       dotnet-sdk_8
-      jetbrains.idea-community
+      jetbrains.idea-ultimate
       kitty
       nodejs
       python3
@@ -195,6 +195,7 @@ in
             vimium
             sponsorblock
             youtube-recommended-videos
+            scroll_anywhere
           ];
           userChrome = ''
             #TabsToolbar { visibility: collapse !important; }

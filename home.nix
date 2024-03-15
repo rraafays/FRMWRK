@@ -58,7 +58,6 @@ in
       qrencode
       speedtest-rs
       thokr
-      transmission
 
       # interface tools 
       cliphist

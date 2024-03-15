@@ -6,7 +6,7 @@
   # ssh & boot
   services.openssh.enable = true;
   boot = {
-    kernelParams = [ "joydev" "usbhid" "quiet" ];
+    kernelParams = [ "joydev" "usbhid" "quiet" "uinput" ];
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot = {
@@ -181,4 +181,9 @@
     curl
     expat
   ];
+
+  services.udev.extraRules = ''
+    KERNEL=="uinput", GROUP="$USER", MODE:="0660"
+    KERNEL=="event*", GROUP="$USER", NAME="input/%k", MODE="660"
+  '';
 }

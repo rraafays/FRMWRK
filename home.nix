@@ -119,6 +119,7 @@ in
         exec = [
           "pactl set-sink-volume @DEFAULT_SINK@ 100%"
           "wpctl set-volume @DEFAULT_SINK@ 100%"
+          "/home/raf/.config/mouseless/mouseless"
         ];
 
         input = {

@@ -63,6 +63,7 @@ in
       cliphist
       rofi
       wl-clipboard
+      xdg-utils
     ];
     dconf.enable = true;
     wayland.windowManager.hyprland = {
@@ -184,6 +185,7 @@ in
           "XDG_CURRENT_DESKTOP,Hyprland"
           "XDG_SESSION_TYPE,wayland"
           "XDG_SESSION_DESKTOP,Hyprland"
+          "BROWSER,firefox"
         ];
       };
     };

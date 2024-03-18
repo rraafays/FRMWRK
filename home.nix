@@ -41,12 +41,9 @@ in
       adbfs-rootless
       android-tools
       dotnet-sdk_8
-      jetbrains.idea-ultimate
       kitty
-      nodejs
       python3
       unstable.cargo
-      vscode
 
       # terminal tools
       fzf

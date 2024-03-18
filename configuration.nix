@@ -6,7 +6,13 @@
   # ssh & boot
   services.openssh.enable = true;
   boot = {
-    kernelParams = [ "joydev" "usbhid" "quiet" "uinput" ];
+    kernelParams = [
+      "quiet"
+      "usbhid"
+      "uinput"
+      "joydev"
+      "pcspkr"
+    ];
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot = {
@@ -91,12 +97,18 @@
   users.users.raf = {
     isNormalUser = true;
     description = "raf";
-    extraGroups = [ "networkmanager" "wheel" "input" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "input"
+      "docker"
+    ];
   };
 
   # system packages
   environment.systemPackages = with pkgs; [
-    # shell tools
+    # system tools
+    beep
     btop
     detox
     du-dust
@@ -185,5 +197,6 @@
   services.udev.extraRules = ''
     KERNEL=="uinput", GROUP="$USER", MODE:="0660"
     KERNEL=="event*", GROUP="$USER", NAME="input/%k", MODE="660"
+    ACTION=="add", SUBSYSTEM=="input", ATTRS{name}=="PC Speaker", ENV{DEVNAME}!="", TAG+="uaccess"
   '';
 }

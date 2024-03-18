@@ -73,6 +73,9 @@ in
       systemd.enable = true;
       settings = {
         bind = [
+          "CTRL ALT, DELETE, exec, shutdown now"
+          "CTRL ALT, RETURN, exec, beep;beep;beep; reboot"
+
           "CTRL, return, exec, kitty"
           "CTRL, space, exec, rofi -show drun -display-drun \"\""
           "CTRL, q, killactive"

@@ -169,6 +169,7 @@
     (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; }) # dev symbols
     sarasa-gothic # chinese, japanese, korean font based on iosevka 
     noto-fonts-monochrome-emoji # emojis that look good in terminal
+    sarabun-font # thai font
   ];
 
   # link user & root dotfiles

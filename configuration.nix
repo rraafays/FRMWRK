@@ -165,11 +165,11 @@
 
   # interface fonts
   fonts.packages = with pkgs; [
-    (iosevka-bin.override { variant = "sgr-iosevka-term-curly"; }) # system font
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; }) # dev symbols
-    sarasa-gothic # chinese, japanese, korean font based on iosevka 
-    noto-fonts-monochrome-emoji # emojis that look good in terminal
+    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; }) # symbols
+    (iosevka-bin.override { variant = "sgr-iosevka-term-curly"; }) # english
+    sarasa-gothic # chinese, japanese, korean
     sarabun-font # thai font
+    noto-fonts-emoji # emojis
   ];
 
   # link user & root dotfiles

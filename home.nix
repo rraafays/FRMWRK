@@ -40,10 +40,7 @@ in
       # development tools
       adbfs-rootless
       android-tools
-      dotnet-sdk_8
       kitty
-      python3
-      unstable.cargo
 
       # terminal tools
       fzf

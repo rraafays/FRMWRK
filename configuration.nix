@@ -117,6 +117,7 @@
     gh
     git
     neovim
+    nix-your-shell
     p7zip
     rename
     unzip

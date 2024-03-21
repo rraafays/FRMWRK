@@ -55,6 +55,7 @@ in
 
       # interface tools 
       cliphist
+      gamescope
       rofi
       wl-clipboard
       xdg-utils

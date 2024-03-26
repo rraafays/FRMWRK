@@ -48,7 +48,6 @@ in
       mprocs
       mpv
       openvpn
-      qrencode
       speedtest-rs
       thokr
 

@@ -117,7 +117,6 @@
     detox
     du-dust
     duf
-    fastfetch
     gh
     git
     neovim

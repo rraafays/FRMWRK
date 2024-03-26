@@ -47,7 +47,6 @@ in
       jq
       mprocs
       mpv
-      onefetch
       openvpn
       qrencode
       speedtest-rs

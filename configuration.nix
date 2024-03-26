@@ -24,7 +24,11 @@
   };
 
   # nix system
-  system.autoUpgrade. enable = true;
+  system.autoUpgrade = {
+    enable = true;
+    randomizedDelaySec = "0";
+    dates = "daily";
+  };
   nix = {
     optimise.automatic = true;
     gc.automatic = true;

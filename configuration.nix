@@ -198,6 +198,7 @@
     openssl
     curl
     expat
+    SDL2
   ];
 
   services.udev.extraRules = ''

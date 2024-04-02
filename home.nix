@@ -54,7 +54,9 @@ in
       # interface tools 
       cliphist
       gamescope
+      grim
       rofi
+      slurp
       wl-clipboard
       xdg-utils
     ];
@@ -65,7 +67,7 @@ in
       xwayland.enable = true;
       systemd.enable = true;
       settings = {
-        monitor = ",highrr,auto,1,bitdepth,10,vrr,0";
+        monitor = ",highrr,auto,1,vrr,0";
         bind = [
           "CTRL ALT, DELETE, exec, shutdown now"
           "CTRL ALT, RETURN, exec, beep;beep;beep; reboot"
@@ -118,6 +120,10 @@ in
           "pactl set-sink-volume @DEFAULT_SINK@ 100%"
           "wpctl set-volume @DEFAULT_SINK@ 100%"
           "/home/raf/.config/mouseless/mouseless"
+        ];
+
+        exec-once = [
+          "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         ];
 
         input = {
@@ -183,6 +189,7 @@ in
           "XDG_SESSION_TYPE,wayland"
           "XDG_SESSION_DESKTOP,Hyprland"
           "BROWSER,firefox"
+          "MOZ_ENABLE_WAYLAND,1"
         ];
       };
     };

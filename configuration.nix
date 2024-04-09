@@ -21,6 +21,7 @@
         configurationLimit = 20;
       };
     };
+    supportedFilesystems = [ "ntfs" ];
   };
 
   # nix system

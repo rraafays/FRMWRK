@@ -59,6 +59,9 @@ in
       slurp
       wl-clipboard
       xdg-utils
+
+      # misc
+      soulseekqt
     ];
     dconf.enable = true;
     wayland.windowManager.hyprland = {

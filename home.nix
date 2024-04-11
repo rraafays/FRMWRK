@@ -60,8 +60,10 @@ in
       wl-clipboard
       xdg-utils
 
-      # misc
+      # file sharing
       soulseekqt
+      transmission
+      tremc
     ];
     dconf.enable = true;
     wayland.windowManager.hyprland = {

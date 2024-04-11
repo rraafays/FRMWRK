@@ -28,7 +28,7 @@
   system.autoUpgrade = {
     enable = true;
     randomizedDelaySec = "0";
-    dates = "daily";
+    dates = "12:00";
   };
   nix = {
     optimise.automatic = true;
@@ -100,6 +100,7 @@
   programs.steam.enable = true;
   users.defaultUserShell = pkgs.fish;
   services.getty.autologinUser = "raf";
+  services.udisks2.enable = true;
   users.users.raf = {
     isNormalUser = true;
     description = "raf";

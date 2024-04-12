@@ -40,6 +40,7 @@ in
       # development tools
       adbfs-rootless
       android-tools
+      jetbrains.idea-ultimate
       kitty
 
       # terminal tools

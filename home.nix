@@ -78,13 +78,13 @@ in
           "CTRL ALT, DELETE, exec, shutdown now"
           "CTRL ALT, RETURN, exec, beep;beep;beep; reboot"
 
-          "CTRL, return, exec, kitty"
-          "CTRL, space, exec, rofi -show drun -display-drun \"\""
+          ",code:86, exec, kitty"
+          ",code:104, exec, rofi -show drun -display-drun \"\""
+          ",code:82, exec, firefox"
           "CTRL, q, killactive"
           "CTRL, code:35, togglesplit"
           "CTRL, code:47, fullscreen"
           "CTRL, code:48, togglefloating"
-          "CTRL, code:61, exec, firefox"
 
           "CTRL, h, movefocus, l"
           "CTRL, j, movefocus, d"

@@ -81,15 +81,17 @@ in
           ",code:86, exec, kitty"
           ",code:104, exec, rofi -show drun -display-drun \"\""
           ",code:82, exec, firefox"
+          ",code:115, fullscreen"
+          "CTRL, code:115, togglefloating"
+          "SHIFT, code:115, togglesplit"
+
           "CTRL, q, killactive"
-          "CTRL, code:35, togglesplit"
-          "CTRL, code:47, fullscreen"
-          "CTRL, code:48, togglefloating"
 
           "CTRL, h, movefocus, l"
           "CTRL, j, movefocus, d"
           "CTRL, k, movefocus, u"
           "CTRL, l, movefocus, r"
+
           "CTRL SHIFT, h, swapwindow, l"
           "CTRL SHIFT, j, swapwindow, d"
           "CTRL SHIFT, k, swapwindow, u"

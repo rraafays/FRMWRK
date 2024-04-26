@@ -81,7 +81,6 @@ in
           ",code:86, exec, kitty"
           ",code:104, exec, rofi -show drun -display-drun \"\""
           ",code:82, exec, firefox"
-          ",code:115, fullscreen"
           "CTRL, code:115, togglefloating"
           "SHIFT, code:115, togglesplit"
 
@@ -176,6 +175,7 @@ in
         dwindle = {
           pseudotile = true;
           preserve_split = true;
+          no_gaps_when_only = 1;
         };
 
         misc = {

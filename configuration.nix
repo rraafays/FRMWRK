@@ -122,6 +122,7 @@
     duf
     gh
     git
+    killall
     neovim
     nix-your-shell
     p7zip

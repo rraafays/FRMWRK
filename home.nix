@@ -105,7 +105,6 @@ in
           "CTRL, 7, workspace, 7 "
           "CTRL, 8, workspace, 8 "
           "CTRL, 9, workspace, 9 "
-          "CTRL, 0, workspace, 10"
 
           "CTRL SHIFT, 1, movetoworkspace, 1"
           "CTRL SHIFT, 2, movetoworkspace, 2"
@@ -116,7 +115,6 @@ in
           "CTRL SHIFT, 7, movetoworkspace, 7"
           "CTRL SHIFT, 8, movetoworkspace, 8"
           "CTRL SHIFT, 9, movetoworkspace, 9"
-          "CTRL SHIFT, 0, movetoworkspace, 10"
         ];
         bindm = [
           "SHIFT, mouse:272, movewindow"
@@ -212,7 +210,6 @@ in
             youtube-recommended-videos
             scroll_anywhere
             darkreader
-            zoom-page-we
           ];
           userChrome = ''
             #TabsToolbar { visibility: collapse !important; }

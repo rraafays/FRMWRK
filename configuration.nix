@@ -27,6 +27,8 @@
   # nix system
   system.autoUpgrade = {
     enable = true;
+    persistent = true;
+    allowReboot = true;
     randomizedDelaySec = "0";
     dates = "12:00";
   };

@@ -1,10 +1,10 @@
 { pkgs, ... }:
 
 let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz";
 in
 {
-  imports = [ (import "${home-manager}/nixos") ];
+  imports = [ "${home-manager}/nixos" ];
 
   nixpkgs.config = {
     allowUnfree = true;

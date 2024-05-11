@@ -78,13 +78,10 @@ in
           "CTRL ALT, DELETE, exec, shutdown now"
           "CTRL ALT, RETURN, exec, beep;beep;beep; reboot"
 
-          ",code:86, exec, kitty"
-          ",code:104, exec, rofi -show drun -display-drun \"\""
-          ",code:82, exec, firefox"
-          "CTRL, code:115, togglefloating"
-          "SHIFT, code:115, togglesplit"
-
           "CTRL, q, killactive"
+          "CTRL, RETURN, exec, kitty"
+          "CTRL, SPACE, exec, rofi -show drun -display-drun \"\""
+          "CTRL, code:48, exec, firefox"
 
           "CTRL, h, movefocus, l"
           "CTRL, j, movefocus, d"
@@ -101,20 +98,12 @@ in
           "CTRL, 3, workspace, 3 "
           "CTRL, 4, workspace, 4 "
           "CTRL, 5, workspace, 5 "
-          "CTRL, 6, workspace, 6 "
-          "CTRL, 7, workspace, 7 "
-          "CTRL, 8, workspace, 8 "
-          "CTRL, 9, workspace, 9 "
 
           "CTRL SHIFT, 1, movetoworkspace, 1"
           "CTRL SHIFT, 2, movetoworkspace, 2"
           "CTRL SHIFT, 3, movetoworkspace, 3"
           "CTRL SHIFT, 4, movetoworkspace, 4"
           "CTRL SHIFT, 5, movetoworkspace, 5"
-          "CTRL SHIFT, 6, movetoworkspace, 6"
-          "CTRL SHIFT, 7, movetoworkspace, 7"
-          "CTRL SHIFT, 8, movetoworkspace, 8"
-          "CTRL SHIFT, 9, movetoworkspace, 9"
         ];
         bindm = [
           "SHIFT, mouse:272, movewindow"

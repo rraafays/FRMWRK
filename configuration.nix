@@ -11,7 +11,6 @@
       "usbhid"
       "uinput"
       "joydev"
-      "pcspkr"
     ];
     loader = {
       efi.canTouchEfiVariables = true;
@@ -117,7 +116,6 @@
   # system packages
   environment.systemPackages = with pkgs; [
     # system tools
-    beep
     btop
     detox
     du-dust
@@ -125,7 +123,7 @@
     gh
     git
     killall
-    neovim
+    lunarvim
     nix-your-shell
     p7zip
     rename
@@ -205,10 +203,4 @@
     expat
     SDL2
   ];
-
-  services.udev.extraRules = ''
-    KERNEL=="uinput", GROUP="$USER", MODE:="0660"
-    KERNEL=="event*", GROUP="$USER", NAME="input/%k", MODE="660"
-    ACTION=="add", SUBSYSTEM=="input", ATTRS{name}=="PC Speaker", ENV{DEVNAME}!="", TAG+="uaccess"
-  '';
 }

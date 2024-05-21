@@ -48,6 +48,7 @@ in
       jq
       mprocs
       mpv
+      newsboat
       openvpn
       speedtest-rs
       thokr
@@ -64,7 +65,6 @@ in
       # file sharing
       soulseekqt
       transmission
-      tremc
     ];
     dconf.enable = true;
     wayland.windowManager.hyprland = {

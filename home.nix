@@ -83,15 +83,20 @@ in
           "CTRL, SPACE, exec, rofi -show drun -display-drun \"\""
           "CTRL, code:48, exec, firefox"
 
-          "CTRL, h, movefocus, l"
-          "CTRL, j, movefocus, d"
-          "CTRL, k, movefocus, u"
-          "CTRL, l, movefocus, r"
+          "CTRL, left, movefocus, l"
+          "CTRL, down, movefocus, d"
+          "CTRL, up, movefocus, u"
+          "CTRL, right, movefocus, r"
 
-          "CTRL SHIFT, h, swapwindow, l"
-          "CTRL SHIFT, j, swapwindow, d"
-          "CTRL SHIFT, k, swapwindow, u"
-          "CTRL SHIFT, l, swapwindow, r"
+          "CTRL SHIFT, left,    swapwindow, l"
+          "CTRL SHIFT, down,    swapwindow, d"
+          "CTRL SHIFT, up,      swapwindow, u"
+          "CTRL SHIFT, right,   swapwindow, r"
+
+          "CTRL ALT, left,      resizeactive, -10 0"
+          "CTRL ALT, down,      resizeactive, 0 10"
+          "CTRL ALT, up,        resizeactive, 0 -10"
+          "CTRL ALT, right,     resizeactive, 0 0"
 
           "CTRL, 1, workspace, 1"
           "CTRL, 2, workspace, 2"
@@ -102,7 +107,6 @@ in
           "CTRL, 7, workspace, 7"
           "CTRL, 8, workspace, 8"
           "CTRL, 9, workspace, 9"
-          "CTRL, 0, workspace, 10"
 
           "CTRL SHIFT, 1, movetoworkspace, 1"
           "CTRL SHIFT, 2, movetoworkspace, 2"
@@ -113,7 +117,6 @@ in
           "CTRL SHIFT, 7, movetoworkspace, 7"
           "CTRL SHIFT, 8, movetoworkspace, 8"
           "CTRL SHIFT, 9, movetoworkspace, 9"
-          "CTRL SHIFT, 0, movetoworkspace, 10"
         ];
         bindm = [
           "SHIFT, mouse:272, movewindow"

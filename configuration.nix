@@ -69,9 +69,13 @@
     LC_TELEPHONE = "en_GB.UTF-8";
   };
 
-  # interface & audio
+  # peripherals
   sound.enable = true;
   hardware.pulseaudio.enable = false;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

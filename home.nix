@@ -51,7 +51,7 @@ in
       newsboat
       openvpn
       speedtest-rs
-      thokr
+      typer
 
       # interface tools 
       cliphist

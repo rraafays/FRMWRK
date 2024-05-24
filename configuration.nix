@@ -97,6 +97,7 @@
 
   # user packages
   programs.fish.enable = true;
+  programs.command-not-found.enable = true;
   programs.starship.enable = true;
   programs.steam.enable = true;
   users.defaultUserShell = pkgs.fish;

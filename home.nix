@@ -82,7 +82,7 @@ in
           "CTRL, q, killactive"
           "CTRL, RETURN, exec, kitty"
           "CTRL, SPACE, exec, rofi -show drun -display-drun \"\""
-          "CTRL, code:48, exec, firefox"
+          "CTRL, code:61, exec, firefox"
 
           "CTRL, left, movefocus, l"
           "CTRL, down, movefocus, d"

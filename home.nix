@@ -99,6 +99,10 @@ in
           "CTRL ALT, up,        resizeactive, 0 -10"
           "CTRL ALT, right,     resizeactive, 0 0"
 
+          ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%-"
+          ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"
+          ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+
           "CTRL, 1, workspace, 1"
           "CTRL, 2, workspace, 2"
           "CTRL, 3, workspace, 3"

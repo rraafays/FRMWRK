@@ -217,6 +217,7 @@ in
             youtube-recommended-videos
             scroll_anywhere
             read-aloud
+            darkreader
           ];
           userChrome = ''
             #TabsToolbar { visibility: collapse !important; }

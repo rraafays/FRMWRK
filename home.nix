@@ -216,6 +216,7 @@ in
             sponsorblock
             youtube-recommended-videos
             scroll_anywhere
+            read-aloud
           ];
           userChrome = ''
             #TabsToolbar { visibility: collapse !important; }

@@ -8,6 +8,7 @@
     ./modules/home/configuration.nix
     ./modules/hyprland/configuration.nix
     ./modules/firefox/configuration.nix
+    ./modules/git/configuration.nix
   ];
 
   networking.hostName = "SHAGOHOD";

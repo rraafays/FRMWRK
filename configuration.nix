@@ -3,12 +3,12 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./modules/linux/configuration.nix
-    ./modules/environment/configuration.nix
-    ./modules/home/configuration.nix
-    ./modules/hyprland/configuration.nix
-    ./modules/firefox/configuration.nix
-    ./modules/git/configuration.nix
+    ./modules/linux
+    ./modules/environment
+    ./modules/home
+    ./modules/hyprland
+    ./modules/firefox
+    ./modules/git
   ];
 
   networking.hostName = "SHAGOHOD";

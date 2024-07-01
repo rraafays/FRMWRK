@@ -9,6 +9,7 @@
     ./modules/hyprland
     ./modules/firefox
     ./modules/git
+    ./modules/fonts
   ];
 
   networking.hostName = "SHAGOHOD";

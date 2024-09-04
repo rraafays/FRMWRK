@@ -11,7 +11,7 @@
     ./modules/fonts
   ];
 
-  networking.hostName = "SHAGOHOD";
+  networking.hostName = "FRMWRK";
   system.stateVersion = "23.11";
   time.timeZone = "Europe/London";
   networking.networkmanager.enable = true;

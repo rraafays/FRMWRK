@@ -8,7 +8,6 @@
     ./modules/home
     ./modules/hyprland
     ./modules/firefox
-    ./modules/git
     ./modules/fonts
   ];
 
@@ -46,4 +45,17 @@
     };
     supportedFilesystems = [ "ntfs" ];
   };
+
+system.activationScripts.dotfiles = {
+text = ''
+if [ -L /root/.config ]; then
+    rm /root/.config
+elif [ -d /root/.config ]; then
+    rm -rf /root/.config
+fi
+
+ln -s /home/raf/.config /root/.config
+# chown -R raf /home/raf/.config
+'';
+};
 }

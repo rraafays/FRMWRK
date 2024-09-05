@@ -1,11 +1,16 @@
 { ... }:
 
 let
+    STATE_VERSION = "24.05";
     nixos-hardware = builtins.fetchTarball "https://github.com/NixOS/nixos-hardware/archive/master.tar.gz";
+    home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-${STATE_VERSION}.tar.gz";
 in
 {
+  system.stateVersion = "${STATE_VERSION}";
+
   imports = [
     "${nixos-hardware}/framework/13-inch/7040-amd"
+    "${home-manager}/nixos"
     ./hardware-configuration.nix
     ./modules/linux
     ./modules/environment
@@ -15,7 +20,6 @@ in
     ./modules/fonts
   ];
 
-  system.stateVersion = "23.11";
   time.timeZone = "Europe/London";
   networking = {
       hostName = "FRMWRK";

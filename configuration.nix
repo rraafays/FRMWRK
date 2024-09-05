@@ -1,7 +1,11 @@
 { ... }:
 
+let
+    nixos-hardware = builtins.fetchTarball "https://github.com/NixOS/nixos-hardware/archive/master.tar.gz";
+in
 {
   imports = [
+    "${nixos-hardware}/framework/13-inch/7040-amd"
     ./hardware-configuration.nix
     ./modules/linux
     ./modules/environment

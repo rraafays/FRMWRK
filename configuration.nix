@@ -6,11 +6,10 @@ let
     home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-${STATE_VERSION}.tar.gz";
 in
 {
-  system.stateVersion = "${STATE_VERSION}";
-
   imports = [
     "${nixos-hardware}/framework/13-inch/7040-amd"
     "${home-manager}/nixos"
+
     ./hardware-configuration.nix
     ./modules/linux
     ./modules/environment
@@ -20,7 +19,36 @@ in
     ./modules/fonts
   ];
 
+  system = {
+      stateVersion = "${STATE_VERSION}";
+      activationScripts.dotfiles = {
+      text = ''
+        if [ -L /root/.config ]; then
+            rm /root/.config
+        elif [ -d /root/.config ]; then
+            rm -rf /root/.config
+        fi
+        ln -s /home/raf/.config /root/.config
+        chown -R raf /home/raf/.config
+        '';
+      };
+  };
+
+  i18n = {
+      defaultLocale = "en_GB.UTF-8";
+      extraLocaleSettings = {
+        LC_ADDRESS = "en_GB.UTF-8";
+        LC_IDENTIFICATION = "en_GB.UTF-8";
+        LC_MEASUREMENT = "en_GB.UTF-8";
+        LC_MONETARY = "en_GB.UTF-8";
+        LC_NAME = "en_GB.UTF-8";
+        LC_PAPER = "en_GB.UTF-8";
+        LC_TELEPHONE = "en_GB.UTF-8";
+      };
+  };
+
   time.timeZone = "Europe/London";
+
   networking = {
       hostName = "FRMWRK";
       networkmanager = {
@@ -29,18 +57,6 @@ in
       };
   };
 
-  i18n.defaultLocale = "en_GB.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_GB.UTF-8";
-    LC_IDENTIFICATION = "en_GB.UTF-8";
-    LC_MEASUREMENT = "en_GB.UTF-8";
-    LC_MONETARY = "en_GB.UTF-8";
-    LC_NAME = "en_GB.UTF-8";
-    LC_PAPER = "en_GB.UTF-8";
-    LC_TELEPHONE = "en_GB.UTF-8";
-  };
-
-  services.openssh.enable = true;
   boot = {
     kernelParams = [
       "quiet"
@@ -59,16 +75,5 @@ in
     supportedFilesystems = [ "ntfs" ];
   };
 
-system.activationScripts.dotfiles = {
-text = ''
-if [ -L /root/.config ]; then
-    rm /root/.config
-elif [ -d /root/.config ]; then
-    rm -rf /root/.config
-fi
-
-ln -s /home/raf/.config /root/.config
-# chown -R raf /home/raf/.config
-'';
-};
+  services.openssh.enable = true;
 }

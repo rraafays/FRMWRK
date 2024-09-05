@@ -16,3 +16,6 @@
 [submodule "modules/fonts"]
 	path = modules/fonts
 	url = https://github.com/rraafays/fonts-nix
+[submodule "modules/neovim"]
+	path = modules/neovim
+	url = https://github.com/rraafays/neovim.nix

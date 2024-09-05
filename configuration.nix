@@ -19,6 +19,7 @@ in
     ./modules/fonts
   ];
 
+  home-manager.users.raf.home.stateVersion = "${STATE_VERSION}";
   system = {
       stateVersion = "${STATE_VERSION}";
       activationScripts.dotfiles = {

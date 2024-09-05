@@ -15,10 +15,15 @@ in
     ./modules/fonts
   ];
 
-  networking.hostName = "FRMWRK";
   system.stateVersion = "23.11";
   time.timeZone = "Europe/London";
-  networking.networkmanager.enable = true;
+  networking = {
+      hostName = "FRMWRK";
+      networkmanager = {
+          enable = true;
+          wifi.backend = "iwd";
+      };
+  };
 
   i18n.defaultLocale = "en_GB.UTF-8";
   i18n.extraLocaleSettings = {

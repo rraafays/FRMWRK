@@ -1,7 +1,9 @@
-{ ... }:
+{ pkgs, ... }:
 
 let
     STATE_VERSION = "24.05";
+    USER = "raf";
+
     nixos-hardware = builtins.fetchTarball "https://github.com/NixOS/nixos-hardware/archive/master.tar.gz";
     home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-${STATE_VERSION}.tar.gz";
 in
@@ -18,7 +20,35 @@ in
     ./modules/fonts
   ];
 
-  home-manager.users.raf.home.stateVersion = "${STATE_VERSION}";
+    services.greetd = {
+        enable = true;
+        settings = {
+            initial_session = {
+                command = "${pkgs.hyprland}/bin/Hyprland";
+                user = "${USER}";
+            };
+            default_session = {
+                command = "${pkgs.hyprland}/bin/Hyprland";
+                user = "${USER}";
+            };
+        };
+    };
+
+  users = {
+      defaultUserShell = pkgs.fish;
+      users.${USER} = {
+        isNormalUser = true;
+        description = "user";
+        extraGroups = [
+          "networkmanager"
+          "wheel"
+          "input"
+          "docker"
+        ];
+      };
+  };
+
+  home-manager.users.${USER}.home.stateVersion = "${STATE_VERSION}";
   system = {
       stateVersion = "${STATE_VERSION}";
       activationScripts.dotfiles = {
@@ -28,8 +58,8 @@ in
         elif [ -d /root/.config ]; then
             rm -rf /root/.config
         fi
-        ln -s /home/raf/.config /root/.config
-        chown -R raf /home/raf/.config
+        ln -s /home/${USER}/.config /root/.config
+        chown -R ${USER} /home/${USER}/.config
         '';
       };
   };

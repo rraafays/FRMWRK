@@ -10,7 +10,6 @@ in
     "${nixos-hardware}/framework/13-inch/7040-amd"
     "${home-manager}/nixos"
 
-    ./hardware-configuration.nix
     ./modules/linux
     ./modules/environment
     ./modules/home

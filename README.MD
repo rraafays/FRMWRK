@@ -1,13 +1,12 @@
-# FRMWRK - NixOS System Configuration for Framework 13
+# FRMWRK
 
 This repository, `FRMWRK`, contains my Framework 13 NixOS system configuration.
 The configuration is modular and designed for non-root user maintenance.
 
 ## Features
 
-- **Modular Configuration**: The system is divided into multiple modules stored under the `modules/` directory.
-- **Non-Root Editing**: The repository can be cloned and modified by a non-root user.
-- **Submodules**: The repository includes several Git submodules to manage dependencies and external configurations.
+- **Modular Configuration**: uses git submodules stored under `./modules/`
+- **Rootless Editing**: designed for cloning, modification & maintenance by a non-root user
 
 ## Installation & Setup
 
@@ -29,7 +28,8 @@ sudo ln -s ~/FRMWRK /etc/nixos/FRMWRK
 
 ### 3. modify `configuration.nix`
 
-You will need to modify the existing configuration.nix located in `/etc/nixos/` to import the new configuration:
+You will need to modify the existing configuration.nix located in `/etc/nixos/`, 
+to import the new configuration:
 
 ```nix
 # /etc/nixos/configuration.nix

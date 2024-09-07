@@ -1,11 +1,11 @@
 { pkgs, ... }:
 
 let
-    STATE_VERSION = "24.05";
-    USER = "raf";
+  STATE_VERSION = "24.05";
+  USER = "raf";
 
-    nixos-hardware = builtins.fetchTarball "https://github.com/NixOS/nixos-hardware/archive/master.tar.gz";
-    home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-${STATE_VERSION}.tar.gz";
+  nixos-hardware = builtins.fetchTarball "https://github.com/NixOS/nixos-hardware/archive/master.tar.gz";
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-${STATE_VERSION}.tar.gz";
 in
 {
   imports = [
@@ -18,26 +18,27 @@ in
     ./modules/hyprland
     ./modules/firefox
     ./modules/fonts
+    ./modules/formatters
   ];
 
   users = {
-      defaultUserShell = pkgs.fish;
-      users.${USER} = {
-        isNormalUser = true;
-        description = "user";
-        extraGroups = [
-          "networkmanager"
-          "wheel"
-          "input"
-          "docker"
-        ];
-      };
+    defaultUserShell = pkgs.fish;
+    users.${USER} = {
+      isNormalUser = true;
+      description = "user";
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "input"
+        "docker"
+      ];
+    };
   };
 
   home-manager.users.${USER}.home.stateVersion = "${STATE_VERSION}";
   system = {
-      stateVersion = "${STATE_VERSION}";
-      activationScripts.dotfiles = {
+    stateVersion = "${STATE_VERSION}";
+    activationScripts.dotfiles = {
       text = ''
         if [ -L /root/.config ]; then
             rm /root/.config
@@ -46,37 +47,35 @@ in
         fi
         ln -s /home/${USER}/.config /root/.config
         chown -R ${USER} /home/${USER}/.config
-        '';
-      };
+      '';
+    };
   };
 
   i18n = {
-      defaultLocale = "en_GB.UTF-8";
-      extraLocaleSettings = {
-        LC_ADDRESS = "en_GB.UTF-8";
-        LC_IDENTIFICATION = "en_GB.UTF-8";
-        LC_MEASUREMENT = "en_GB.UTF-8";
-        LC_MONETARY = "en_GB.UTF-8";
-        LC_NAME = "en_GB.UTF-8";
-        LC_PAPER = "en_GB.UTF-8";
-        LC_TELEPHONE = "en_GB.UTF-8";
-      };
+    defaultLocale = "en_GB.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "en_GB.UTF-8";
+      LC_IDENTIFICATION = "en_GB.UTF-8";
+      LC_MEASUREMENT = "en_GB.UTF-8";
+      LC_MONETARY = "en_GB.UTF-8";
+      LC_NAME = "en_GB.UTF-8";
+      LC_PAPER = "en_GB.UTF-8";
+      LC_TELEPHONE = "en_GB.UTF-8";
+    };
   };
 
   time.timeZone = "Europe/London";
 
   networking = {
-      hostName = "FRMWRK";
-      networkmanager = {
-          enable = true;
-          wifi.backend = "wpa_supplicant";
-      };
+    hostName = "FRMWRK";
+    networkmanager = {
+      enable = true;
+      wifi.backend = "wpa_supplicant";
+    };
   };
 
   boot = {
-    kernelModules = [
-      "cpufreq_ondemand"
-    ];
+    kernelModules = [ "cpufreq_ondemand" ];
     kernelParams = [
       "quiet"
       "threadirqs"
@@ -98,13 +97,13 @@ in
   };
 
   services = {
-      preload.enable = true;
-      earlyoom.enable = true;
-      power-profiles-daemon.enable = true;
+    preload.enable = true;
+    earlyoom.enable = true;
+    power-profiles-daemon.enable = true;
   };
 
   powerManagement = {
-      enable = true;
-      cpuFreqGovernor = "schedutil";
+    enable = true;
+    cpuFreqGovernor = "schedutil";
   };
 }

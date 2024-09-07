@@ -1,21 +1,21 @@
 [submodule "modules/linux"]
 	path = modules/linux
-	url = https://github.com/rraafays/linux-nix
+	url = https://github.com/rraafays/linux.nix
 [submodule "modules/environment"]
 	path = modules/environment
-	url = https://github.com/rraafays/environment-nix
+	url = https://github.com/rraafays/environment.nix
 [submodule "modules/home"]
 	path = modules/home
-	url = https://github.com/rraafays/home-nix
+	url = https://github.com/rraafays/home.nix
 [submodule "modules/hyprland"]
 	path = modules/hyprland
-	url = https://github.com/rraafays/hyprland-nix
+	url = https://github.com/rraafays/hyprland.nix
 [submodule "modules/firefox"]
 	path = modules/firefox
-	url = https://github.com/rraafays/firefox-nix
+	url = https://github.com/rraafays/firefox.nix
 [submodule "modules/fonts"]
 	path = modules/fonts
-	url = https://github.com/rraafays/fonts-nix
+	url = https://github.com/rraafays/fonts.nix
 [submodule "modules/formatters"]
 	path = modules/formatters
 	url = https://github.com/rraafays/formatters.nix

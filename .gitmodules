@@ -16,3 +16,6 @@
 [submodule "modules/fonts"]
 	path = modules/fonts
 	url = https://github.com/rraafays/fonts-nix
+[submodule "modules/formatters"]
+	path = modules/formatters
+	url = https://github.com/rraafays/formatters.nix

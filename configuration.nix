@@ -74,11 +74,17 @@ in
   };
 
   boot = {
+    kernelModules = [
+      "cpufreq_ondemand"
+    ];
     kernelParams = [
       "quiet"
+      "threadirqs"
       "usbhid"
       "uinput"
       "joydev"
+      "mitigations=off"
+      "smt=on"
     ];
     loader = {
       efi.canTouchEfiVariables = true;
@@ -91,5 +97,14 @@ in
     supportedFilesystems = [ "ntfs" ];
   };
 
-  services.openssh.enable = true;
+  services = {
+      preload.enable = true;
+      earlyoom.enable = true;
+      power-profiles-daemon.enable = true;
+  };
+
+  powerManagement = {
+      enable = true;
+      cpuFreqGovernor = "schedutil";
+  };
 }

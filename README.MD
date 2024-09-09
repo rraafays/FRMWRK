@@ -1,7 +1,7 @@
 # FRMWRK
 
 This repository, `FRMWRK`, contains my Framework 13 NixOS system configuration.
-The configuration is modular and designed for non-root user maintenance.
+The configuration is modular and designed for a single non-root user to maintain and use.
 
 ## Features
 

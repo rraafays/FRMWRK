@@ -19,3 +19,6 @@
 [submodule "modules/formatters"]
 	path = modules/formatters
 	url = https://github.com/rraafays/formatters.nix
+[submodule "modules/egpu"]
+	path = modules/egpu
+	url = https://github.com/rraafays/egpu.nix

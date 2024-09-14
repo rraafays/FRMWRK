@@ -22,3 +22,6 @@
 [submodule "modules/egpu"]
 	path = modules/egpu
 	url = https://github.com/rraafays/egpu.nix
+[submodule "modules/plasma"]
+	path = modules/plasma
+	url = https://github.com/rraafays/plasma.nix

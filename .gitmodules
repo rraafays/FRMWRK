@@ -25,3 +25,6 @@
 [submodule "modules/plasma"]
 	path = modules/plasma
 	url = https://github.com/rraafays/plasma.nix
+[submodule "modules/gnome"]
+	path = modules/gnome
+	url = https://github.com/rraafays/gnome.nix

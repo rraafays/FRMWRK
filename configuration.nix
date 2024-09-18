@@ -31,6 +31,7 @@ in
     ./modules/fonts
     ./modules/formatters
     ./modules/egpu
+    ./modules/steam
   ];
 
   networking = {

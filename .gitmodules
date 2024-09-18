@@ -22,3 +22,6 @@
 [submodule "modules/egpu"]
 	path = modules/egpu
 	url = https://github.com/rraafays/egpu.nix
+[submodule "modules/steam"]
+	path = modules/steam
+	url = https://github.com/rraafays/steam.nix

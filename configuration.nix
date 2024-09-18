@@ -88,8 +88,6 @@ in
   services = {
     udev.packages = [ pkgs.bolt ];
     hardware.bolt.enable = true;
-    preload.enable = true;
-    earlyoom.enable = true;
     power-profiles-daemon.enable = true;
   };
 

@@ -38,7 +38,7 @@ in
     hostName = "FRMWRK";
     networkmanager = {
       enable = true;
-      wifi.backend = "wpa_supplicant";
+      wifi.backend = "iwd";
     };
   };
 

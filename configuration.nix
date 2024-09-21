@@ -91,6 +91,12 @@ in
     power-profiles-daemon.enable = true;
   };
 
+  boot.kernelParams = [
+    "amd_pstate=passive"
+    "mitigations=off"
+    "smt=on"
+  ];
+
   powerManagement = {
     enable = true;
     cpuFreqGovernor = "schedutil";

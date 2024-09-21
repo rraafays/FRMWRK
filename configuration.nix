@@ -92,7 +92,7 @@ in
   };
 
   boot.kernelParams = [
-    "amd_pstate=passive"
+    "amd_pstate=guided"
     "mitigations=off"
     "smt=on"
   ];

@@ -99,7 +99,7 @@ in
 
   powerManagement = {
     enable = true;
-    cpuFreqGovernor = "schedutil";
+    cpuFreqGovernor = "passive";
   };
 
   services.logind = {

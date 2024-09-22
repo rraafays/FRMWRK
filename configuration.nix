@@ -101,4 +101,12 @@ in
     enable = true;
     cpuFreqGovernor = "schedutil";
   };
+
+  services.logind = {
+    suspendKey = "hibernate";
+    powerKey = "hibernate";
+    lidSwitch = "hibernate";
+    lidSwitchDocked = "ignore";
+    lidSwitchExternalPower = "ignore";
+  };
 }

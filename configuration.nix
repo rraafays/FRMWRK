@@ -103,8 +103,8 @@ in
   };
 
   services.logind = {
-    suspendKey = "hibernate";
-    powerKey = "hibernate";
+    suspendKey = "ignore";
+    powerKey = "ignore";
     lidSwitch = "hibernate";
     lidSwitchDocked = "ignore";
     lidSwitchExternalPower = "ignore";

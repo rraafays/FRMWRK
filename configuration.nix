@@ -93,7 +93,7 @@ in
 
   boot.kernelParams = [
     "amd_pstate=guided"
-    "mitigations=off"
+    "mitigations=on"
     "smt=on"
   ];
 
@@ -107,6 +107,6 @@ in
     powerKey = "ignore";
     lidSwitch = "hibernate";
     lidSwitchDocked = "ignore";
-    lidSwitchExternalPower = "ignore";
+    lidSwitchExternalPower = "hibernate";
   };
 }

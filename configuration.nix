@@ -3,6 +3,7 @@
 let
   STATE_VERSION = "24.05";
   USER = "raf";
+  LOCALE = "en_GB.UTF-8";
 
   nixos-hardware = builtins.fetchTarball "https://github.com/NixOS/nixos-hardware/archive/master.tar.gz";
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-${STATE_VERSION}.tar.gz";
@@ -44,15 +45,16 @@ in
 
   time.timeZone = "Europe/London";
   i18n = {
-    defaultLocale = "en_GB.UTF-8";
+    defaultLocale = LOCALE;
     extraLocaleSettings = {
-      LC_ADDRESS = "en_GB.UTF-8";
-      LC_IDENTIFICATION = "en_GB.UTF-8";
-      LC_MEASUREMENT = "en_GB.UTF-8";
-      LC_MONETARY = "en_GB.UTF-8";
-      LC_NAME = "en_GB.UTF-8";
-      LC_PAPER = "en_GB.UTF-8";
-      LC_TELEPHONE = "en_GB.UTF-8";
+      LC_ADDRESS = LOCALE;
+      LC_IDENTIFICATION = LOCALE;
+      LC_MEASUREMENT = LOCALE;
+      LC_MONETARY = LOCALE;
+      LC_NAME = LOCALE;
+      LC_PAPER = LOCALE;
+      LC_TELEPHONE = LOCALE;
+      HOST_LC_ALL = LOCALE;
     };
   };
 

@@ -95,7 +95,6 @@ in
 
   boot.kernelParams = [
     "amd_pstate=guided"
-    "mitigations=on"
     "smt=on"
   ];
 

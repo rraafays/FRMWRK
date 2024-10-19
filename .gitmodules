@@ -25,3 +25,6 @@
 [submodule "modules/steam"]
 	path = modules/steam
 	url = https://github.com/rraafays/steam.nix
+[submodule "modules/plasma"]
+	path = modules/plasma
+	url = https://github.com/rraafays/plasma.nix

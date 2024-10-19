@@ -27,7 +27,7 @@ in
     ./modules/linux
     ./modules/environment
     ./modules/home
-    ./modules/hyprland
+    ./modules/plasma
     ./modules/firefox
     ./modules/fonts
     ./modules/formatters

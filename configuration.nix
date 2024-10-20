@@ -102,10 +102,4 @@ in
     enable = true;
     cpuFreqGovernor = "passive";
   };
-
-  services.logind = {
-    suspendKey = "ignore";
-    powerKey = "ignore";
-    lidSwitchDocked = "ignore";
-  };
 }

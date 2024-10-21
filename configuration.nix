@@ -37,6 +37,7 @@ in
 
   networking = {
     hostName = "FRMWRK";
+    firewall.enable = true;
     networkmanager = {
       enable = true;
       wifi.backend = "wpa_supplicant";

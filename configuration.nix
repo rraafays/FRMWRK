@@ -33,6 +33,7 @@ in
     ./modules/formatters
     ./modules/egpu
     ./modules/steam
+    ./modules/lsp
   ];
 
   networking = {

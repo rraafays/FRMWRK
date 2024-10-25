@@ -28,6 +28,3 @@
 [submodule "modules/plasma"]
 	path = modules/plasma
 	url = https://github.com/rraafays/plasma.nix
-[submodule "modules/lsp"]
-	path = modules/lsp
-	url = https://github.com/rraafays/lsp.nix

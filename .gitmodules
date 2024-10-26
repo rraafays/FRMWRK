@@ -28,3 +28,6 @@
 [submodule "modules/plasma"]
 	path = modules/plasma
 	url = https://github.com/rraafays/plasma.nix
+[submodule "modules/virtualisation"]
+	path = modules/virtualisation
+	url = https://github.com/rraafays/virtualisation.nix

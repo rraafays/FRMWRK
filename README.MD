@@ -53,6 +53,12 @@ Finally, apply the configuration
 sudo nixos-rebuild switch
 ```
 
+### 5. switch user nixpkgs to unstable
+```bash
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+nix-channel --update
+```
+
 ## Managing Git Submodules
 
 The repository uses Git submodules to manage external configurations and dependencies.
@@ -91,3 +97,9 @@ To remove a module:
 2. remove the module's entry in .git/config
 3. delete the module's directory
 4. run `git rm --cached` on the submodule directory 
+
+## Managing Nix Channels
+
+Nix channels are collections of Nix packages that can be used to manage and update software. To work with nix-channel, you can use commands such as `nix-channel --add <url>` to add a channel and `nix-channel --update` to update the packages.
+
+Having different Nix channels for the root user and a normal user is useful because it separates the system-wide configurations from user-specific ones. This ensures that system updates do not interfere with the user's development environment and vice versa, providing an extra layer of stability and security.

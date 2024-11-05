@@ -31,3 +31,6 @@
 [submodule "modules/virtualisation"]
 	path = modules/virtualisation
 	url = https://github.com/rraafays/virtualisation.nix
+[submodule "modules/nix"]
+	path = modules/nix
+	url = https://github.com/rraafays/nix.nix

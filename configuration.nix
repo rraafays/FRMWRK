@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  STATE_VERSION = "24.05";
+  STATE_VERSION = "24.11";
   USER = "raf";
   LOCALE = "en_GB.UTF-8";
 

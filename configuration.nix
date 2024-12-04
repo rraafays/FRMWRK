@@ -93,6 +93,7 @@ in
     udev.packages = [ pkgs.bolt ];
     hardware.bolt.enable = true;
     power-profiles-daemon.enable = true;
+    xserver.synaptics.palmDetect = true;
   };
 
   boot.kernelParams = [

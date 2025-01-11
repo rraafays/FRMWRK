@@ -34,3 +34,6 @@
 [submodule "modules/nix"]
 	path = modules/nix
 	url = https://github.com/rraafays/nix.nix
+[submodule "modules/mpd"]
+	path = modules/mpd
+	url = https://github.com/rraafays/mpd.nix

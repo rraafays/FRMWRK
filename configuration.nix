@@ -34,6 +34,7 @@ in
     ./modules/egpu
     ./modules/steam
     ./modules/virtualisation
+    ./modules/mpd
   ];
 
   networking = {

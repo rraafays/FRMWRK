@@ -37,6 +37,38 @@ in
     ./modules/mpd
   ];
 
+  boot = {
+    initrd.kernelModules = [ "amdgpu" ];
+    kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = [
+      "amd_pstate=guided"
+      "smt=on"
+    ];
+  };
+
+  services = {
+    xserver.videoDrivers = [ "amdgpu" ];
+    udev.packages = [ pkgs.bolt ];
+    hardware.bolt.enable = true;
+    power-profiles-daemon.enable = true;
+    xserver.synaptics.palmDetect = true;
+  };
+
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "passive";
+  };
+
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+      extraPackages = with pkgs; [ rocmPackages.clr.icd ];
+    };
+    cpu.amd.updateMicrocode = true;
+    enableRedistributableFirmware = true;
+  };
+
   networking = {
     hostName = "FRMWRK";
     firewall.enable = true;
@@ -88,22 +120,5 @@ in
         chown -R ${USER} /home/${USER}/.config
       '';
     };
-  };
-
-  services = {
-    udev.packages = [ pkgs.bolt ];
-    hardware.bolt.enable = true;
-    power-profiles-daemon.enable = true;
-    xserver.synaptics.palmDetect = true;
-  };
-
-  boot.kernelParams = [
-    "amd_pstate=guided"
-    "smt=on"
-  ];
-
-  powerManagement = {
-    enable = true;
-    cpuFreqGovernor = "passive";
   };
 }

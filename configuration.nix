@@ -39,9 +39,9 @@ in
 
   boot = {
     initrd.kernelModules = [ "amdgpu" ];
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
-      "amd_pstate=guided"
+      "amd_pstate=passive"
       "smt=on"
     ];
   };

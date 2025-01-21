@@ -24,17 +24,18 @@ in
   imports = [
     "${nixos-hardware}/framework/13-inch/7040-amd"
     "${home-manager}/nixos"
-    ./modules/linux
+    ./modules/egpu
     ./modules/environment
-    ./modules/home
-    ./modules/plasma
     ./modules/firefox
     ./modules/fonts
     ./modules/formatters
-    ./modules/egpu
+    ./modules/home
+    ./modules/linux
+    ./modules/mpd
+    ./modules/nix
+    ./modules/plasma
     ./modules/steam
     ./modules/virtualisation
-    ./modules/mpd
   ];
 
   boot = {

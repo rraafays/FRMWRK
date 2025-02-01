@@ -42,7 +42,7 @@ in
     initrd.kernelModules = [ "amdgpu" ];
     kernelPackages = pkgs.linuxPackages;
     kernelParams = [
-      "amd_pstate=passive"
+      "amd_pstate=active"
       "smt=on"
     ];
   };

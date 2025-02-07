@@ -9,6 +9,8 @@ let
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-${STATE_VERSION}.tar.gz";
 in
 {
+  home-manager.users.${USER}.home.stateVersion = "${STATE_VERSION}";
+
   nixpkgs.config = {
     allowUnfree = true;
     packageOverrides = pkgs: {
@@ -107,7 +109,6 @@ in
     };
   };
 
-  home-manager.users.${USER}.home.stateVersion = "${STATE_VERSION}";
   system = {
     stateVersion = "${STATE_VERSION}";
     activationScripts.dotfiles = {

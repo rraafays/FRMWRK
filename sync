@@ -4,6 +4,7 @@ set initial_dir (pwd)
 for dir in modules/*/
     if test -d "$dir"
         cd "$dir"
+        echo -n "$dir "
         git pull
         cd $initial_dir
     end

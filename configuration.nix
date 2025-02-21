@@ -122,5 +122,10 @@ in
         chown -R ${USER} /home/${USER}/.config
       '';
     };
+    activationScripts.volumes = {
+      text = ''
+        ln -s /run/media/${USER}/ /Volumes
+      '';
+    };
   };
 }

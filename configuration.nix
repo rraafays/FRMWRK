@@ -124,12 +124,19 @@ in
     };
     activationScripts.volumes = {
       text = ''
+        if [ -L "/Volumes/NixOS HD" ]; then
+            rm "/Volumes/NixOS HD"
+        elif [ -d "/Volumes/NixOS HD" ]; then
+            rm -rf "/Volumes/NixOS HD"
+        fi
         if [ -L /Volumes ]; then
-        	rm /Volumes
+            rm /Volumes
+        elif [ -d /Volumes ]; then
+            rm -rf /Volumes
         fi
         mkdir -p /run/media/${USER}/
         ln -s /run/media/${USER}/ /Volumes
-        ln -s / /Volumes/NixOS\ HD
+        ln -s / "/Volumes/NixOS HD"
       '';
     };
   };

@@ -37,3 +37,6 @@
 [submodule "modules/mpd"]
 	path = modules/mpd
 	url = https://github.com/rraafays/mpd.nix
+[submodule "modules/deepin"]
+	path = modules/deepin
+	url = https://github.com/rraafays/deepin.nix
